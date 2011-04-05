@@ -39,18 +39,19 @@ public:
 	IndexType l;
 	IndexType m;
 
+
 	LmIndex() : l(-1), m(-1) {}
 	LmIndex(IndexType l, IndexType m) : l(l), m(m) {}
+
 
 	bool operator==(LmIndex const& other) const
 	{
 		return l == other.l && m == other.m;
 	}
 
-	unsigned int GetInt() const
+	//map between grid-index and lm-index
 	{
-		typedef unsigned int u;
-		return ((u)l<<7) + m;
+		return l * l + l + m;
 	}
 	
 };
